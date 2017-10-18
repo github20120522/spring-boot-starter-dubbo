@@ -33,7 +33,7 @@ public class DubboHolderListener implements ApplicationListener {
                         while (running && !Thread.currentThread().isInterrupted()) {
                             try {
                                 Thread.sleep(2000);
-                            } catch (InterruptedException e) {
+                            } catch (InterruptedException ignored) {
                             }
                         }
                     }
@@ -52,7 +52,7 @@ public class DubboHolderListener implements ApplicationListener {
     }
     
     public static void stopApplicationContext(Boolean stop){
-    	running = stop.booleanValue();
+    	running = stop;
     	if (null != holdThread) {
             holdThread.interrupt();
             holdThread = null;

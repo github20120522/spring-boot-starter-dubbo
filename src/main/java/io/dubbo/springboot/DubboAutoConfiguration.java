@@ -1,23 +1,17 @@
 package io.dubbo.springboot;
 
-import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.ConsumerConfig;
-import com.alibaba.dubbo.config.MethodConfig;
-import com.alibaba.dubbo.config.ModuleConfig;
-import com.alibaba.dubbo.config.MonitorConfig;
-import com.alibaba.dubbo.config.ProtocolConfig;
-import com.alibaba.dubbo.config.ProviderConfig;
-import com.alibaba.dubbo.config.RegistryConfig;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alibaba.dubbo.config.*;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import javax.annotation.Resource;
 
 @Configuration
 @EnableConfigurationProperties(DubboProperties.class)
 public class DubboAutoConfiguration {
 
-	@Autowired
+	@Resource
 	private DubboProperties dubboProperties;
 
 	@Bean
@@ -91,5 +85,4 @@ public class DubboAutoConfiguration {
 		}
 		return consumerConfig;
 	}
-
 }

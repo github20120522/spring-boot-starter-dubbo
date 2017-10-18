@@ -20,8 +20,5 @@ public class DubboConfigurationApplicationContextInitializer implements Applicat
             applicationContext.getBeanFactory().addBeanPostProcessor(scanner);
             applicationContext.getBeanFactory().registerSingleton("annotationBean", scanner);
         }
-
     }
-
-
 }
