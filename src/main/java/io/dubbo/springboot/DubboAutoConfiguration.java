@@ -1,17 +1,16 @@
 package io.dubbo.springboot;
 
 import com.alibaba.dubbo.config.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import javax.annotation.Resource;
 
 @Configuration
 @EnableConfigurationProperties(DubboProperties.class)
 public class DubboAutoConfiguration {
 
-	@Resource
+	@Autowired
 	private DubboProperties dubboProperties;
 
 	@Bean
