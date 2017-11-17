@@ -10,10 +10,14 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(DubboProperties.class)
 public class DubboAutoConfiguration {
 
-	@Autowired
-	private DubboProperties dubboProperties;
+	private final DubboProperties dubboProperties;
 
-	@Bean
+    @Autowired
+    public DubboAutoConfiguration(DubboProperties dubboProperties) {
+        this.dubboProperties = dubboProperties;
+    }
+
+    @Bean
 	public ApplicationConfig requestApplicationConfig() {
 		ApplicationConfig applicationConfig = dubboProperties.getApplication();
 		if (applicationConfig == null) {
